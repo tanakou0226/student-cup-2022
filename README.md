@@ -4,6 +4,7 @@ SIGNATEの企業×学生の交流を目的とした学生限定コンペティ�
 ## Setup
 
 ```bash
+mkdir data
 cd data
 signate download -c 735
 ```
