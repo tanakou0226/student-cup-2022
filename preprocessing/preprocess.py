@@ -1,5 +1,7 @@
 import argparse
 
+import pandas as pd
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--download_train_path", default="../data/train.csv")
 parser.add_argument("--download_test_path", default="../data/test.csv")
@@ -22,6 +24,9 @@ def preprocess2(num):
 
 
 def main():
+    train_df = pd.read_csv(args.download_train_path)
+    test_df = pd.read_csv(args.download_test_path)
+
     if args.pre1:
         preprocess1(args.pre1_arg)
 
