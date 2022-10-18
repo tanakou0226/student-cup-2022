@@ -59,9 +59,9 @@ MODEL_NAME = 'microsoft/deberta-base'
 TRAIN_BATCH_SIZE = 32
 VALID_BATCH_SIZE = 128
 NUM_CLASSES = 4
-EPOCHS = 20
+EPOCHS = 25
 NUM_SPLITS = 5
-SMOOTHING =  0.0001
+SMOOTHING =  0.03
 
 
 # In[4]:
@@ -87,7 +87,7 @@ def make_dataset(df, tokenizer, device):
         lambda example: tokenizer(example["description"],
                                   padding="max_length",
                                   truncation=True,
-                                  max_length=128))
+                                  max_length=175))
     dataset.set_format(type='torch', 
                        columns=['input_ids', 'token_type_ids', 'attention_mask', 'labels'], 
                        device=device)
